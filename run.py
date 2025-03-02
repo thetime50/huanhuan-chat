@@ -2,14 +2,25 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 from peft import PeftModel
 
+# torch.cuda.is_available() 
+# True
+# torch.cuda.current_device()
+# 0
+# torch.cuda.device_count()
+# 1
+# torch.cuda.get_device_name(0)
+
+
 mode_path = './LLM-Research/Meta-Llama-3___1-8B-Instruct'
 lora_path = './output/llama3_1_instruct_lora/checkpoint-699' # 这里改称你的 lora 输出对应 checkpoint 地址
+
+torch.cuda.empty_cache()
 
 # 加载tokenizer
 tokenizer = AutoTokenizer.from_pretrained(mode_path, trust_remote_code=True)
 
 # 加载模型
-model = AutoModelForCausalLM.from_pretrained(mode_path, device_map="auto",torch_dtype=torch.bfloat16, trust_remote_code=True).eval()
+model = AutoModelForCausalLM.from_pretrained(mode_path, device_map="cuda",torch_dtype=torch.float16,).eval() # torch.bfloat16 trust_remote_code=True
 
 # 加载lora权重
 model = PeftModel.from_pretrained(model, model_id=lora_path)

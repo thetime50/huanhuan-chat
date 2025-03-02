@@ -20,3 +20,8 @@ https://gpushare.com/
 https://mistgpu.com/signup/
 https://www.autodl.com/login
 https://mistgpu.com/signup/
+
+
+transformers Trainer 断点训练
+
+htwtps://blog.csdn.net/spiderwower/article/details/138755776
