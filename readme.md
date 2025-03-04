@@ -40,3 +40,4 @@ ollama create huan --file .\ModelFile
 ollama run huan
 如果出现了Error: invalid file magic的错误， 大概率是这个gguf文件中的某些操作ollama还不支持， 如有些特殊的量化操作等。
 
+Kernel Restarting The kernel for cp-lora.ipynb appears to have died. It will restart automatically.
