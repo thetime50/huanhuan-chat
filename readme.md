@@ -20,6 +20,7 @@ https://gpushare.com/
 https://mistgpu.com/signup/
 https://www.autodl.com/login
 https://mistgpu.com/signup/
+阿里云PAI
 
 
 transformers Trainer 断点训练
