@@ -24,4 +24,18 @@ https://mistgpu.com/signup/
 
 transformers Trainer 断点训练
 
-htwtps://blog.csdn.net/spiderwower/article/details/138755776
+https://blog.csdn.net/spiderwower/article/details/138755776
+https://zhuanlan.zhihu.com/p/715841536
+
+
+python convert_hf_to_gguf.py ../huanhuan-chat\output\merged_model --outtype q8_0  --outfile ../huanhuan-chat\output\result\huan.gguf
+
+ollama create hua --file .\ModelFile
+
+python convert_hf_to_gguf.py ../huanhuan-chat\LLM-Research\Meta-Llama-3___1-8B-Instruct --outtype q8_0  --outfile ../huanhuan-chat\output\result\llama.gguf
+
+
+ollama create huan --file .\ModelFile
+ollama run huan
+如果出现了Error: invalid file magic的错误， 大概率是这个gguf文件中的某些操作ollama还不支持， 如有些特殊的量化操作等。
+
